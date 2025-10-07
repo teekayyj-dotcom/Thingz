@@ -1,0 +1,86 @@
+=======================================================
+CORE WEB FRAMEWORK AND ASYNC SERVER
+=======================================================
+fastapi
+
+Gunicorn is needed to run Uvicorn workers in production
+gunicorn
+
+Uvicorn (standard includes necessary speedups like httptools)
+uvicorn[standard]
+
+=======================================================
+DATABASE (POSTGRESQL & ORM)
+=======================================================
+SQLAlchemy (Core ORM)
+SQLAlchemy
+
+Async driver for PostgreSQL (best compatibility with FastAPI)
+asyncpg
+
+Pydantic (used for data validation and schema definition, auto-included in FastAPI, but listed for clarity)
+pydantic
+
+Recommended library for loading environment variables (e.g., .env file)
+python-dotenv
+
+=======================================================
+AUTHENTICATION AND SECURITY
+=======================================================
+Library for encoding/decoding JWTs
+python-jose[cryptography]
+
+Library for secure password hashing (bcrypt)
+passlib[bcrypt]
+
+=======================================================
+CACHING AND ASYNC MESSAGING
+=======================================================
+Redis client (supports asyncio) for caching and session management
+redis
+
+Celery (distributed task queue)
+celery
+
+Message broker for Celery (using Redis as the broker)
+Redis is often used as both the broker and backend for Celery
+If using Kafka as the Celery broker, replace with 'kombu-kafka' or similar package
+kombu
+
+Kafka client for producing/consuming messages across microservices
+confluent-kafka # or python-kafka, confluent-kafka is often preferred
+
+=======================================================
+SEARCH (ELASTICSEARCH)
+=======================================================
+Official Elasticsearch Python client
+elasticsearch
+
+=======================================================
+AI / MACHINE LEARNING (Recommendation Engine)
+=======================================================
+Scikit-learn for building initial recommendation models
+scikit-learn
+
+NumPy and SciPy are foundational for Scikit-learn
+numpy
+scipy
+
+=======================================================
+DEVELOPMENT/TESTING UTILITIES (Optional but highly recommended)
+=======================================================
+Tool for running tests
+pytest
+
+Test client for FastAPI/Starlette
+pytest-asyncio
+httpx
+
+Static type checker
+mypy
+
+Code formatter
+black
+
+Linter
+flake8
